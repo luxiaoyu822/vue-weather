@@ -61,10 +61,10 @@ async function getWeatherData(cityCode) {
   }
 }
 
-async function getLocationCoords() {
+function getLocationCoords() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      async (position) => {
+      async function (position){
         const key = "API key";
         const location = `${position.coords.longitude},${position.coords.latitude}`;
         const url = `/geocode/regeo?location=${location}&key=${key}`;
